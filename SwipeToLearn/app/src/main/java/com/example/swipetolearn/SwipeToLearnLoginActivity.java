@@ -21,7 +21,7 @@ public class SwipeToLearnLoginActivity extends Activity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_layout);
 
-        
+
     }
 
 
