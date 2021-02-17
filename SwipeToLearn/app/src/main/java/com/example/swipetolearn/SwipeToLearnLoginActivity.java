@@ -21,10 +21,7 @@ public class SwipeToLearnLoginActivity extends Activity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_layout);
 
-        mLoginEditText = (EditText) findViewById(R.id.loginEditText);
-        mPasswordEditText = (EditText) findViewById(R.id.passwordEditText);
 
-        findViewById(R.id.loginButton).setOnClickListener(this);
     }
 
 
