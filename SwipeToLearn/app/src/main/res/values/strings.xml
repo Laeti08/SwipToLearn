@@ -7,10 +7,12 @@
 
     <string name="name">Name</string>
 
-    <string name="username">username</string>
+    <string name="username">Username</string>
 
     <string name="password">Password</string>
 
     <string name="login">Login</string>
+    <string name="votre_score">Votre score</string>
+    <string name="swipe_to_learn">Swipe To Learn</string>
 
 </resources>
