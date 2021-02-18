@@ -1,0 +1,115 @@
+{
+	"results":[
+	{ "categorie": "nourriture", "name": "Strawberry"},
+	{ "categorie": "nourriture", "name": "Melon"},
+	{ "categorie": "nourriture", "name": "Pizza"},
+	{ "categorie": "nourriture", "name": "Cola"},
+	{ "categorie": "nourriture", "name": "Raspberry"},
+	{ "categorie": "nourriture", "name": "Banana"},
+	{ "categorie": "nourriture", "name": "Water"},
+	{ "categorie": "nourriture", "name": "Cherry"},
+	{ "categorie": "nourriture", "name": "Chocolate"},
+	{ "categorie": "nourriture", "name": "Potato"},
+	{ "categorie": "nourriture", "name": "Cucumber"},
+	{ "categorie": "nourriture", "name": "Lemon"},
+	{ "categorie": "Animaux", "name": "Dog"},
+	{ "categorie": "Animaux", "name": "Pig"},
+	{ "categorie": "Animaux", "name": "Donkey"},
+	{ "categorie": "Animaux", "name": "Monkey"},
+	{ "categorie": "Animaux", "name": "Cat"},
+	{ "categorie": "Animaux", "name": "Lion"},
+	{ "categorie": "Animaux", "name": "Horse"},
+	{ "categorie": "Animaux", "name": "Turtle"},
+	{ "categorie": "Animaux", "name": "Monitor lizards"},
+	{ "categorie": "Animaux", "name": "Praying mantis"},
+	{ "categorie": "Animaux", "name": "Rabbit"},
+	{ "categorie": "Animaux", "name": "Koala"},
+	{ "categorie": "Animaux", "name": "Mouse"},
+	{ "categorie": "Animaux", "name": "Crocodile"},
+	{ "categorie": "Transport", "name": "Airplan"},
+	{ "categorie": "Transport", "name": "Coach"},
+	{ "categorie": "Transport", "name": "Car"},
+	{ "categorie": "Transport", "name": "Subway"},
+	{ "categorie": "Transport", "name": "Train"},
+	{ "categorie": "Transport", "name": "Bicycle"},
+	{ "categorie": "Transport", "name": "Tram"},
+	{ "categorie": "Transport", "name": "Boat"},
+	{ "categorie": "Transport", "name": "Scooter"},
+	{ "categorie": "Transport", "name": "Roller skates"},
+	{ "categorie": "Transport", "name": "SkateBoard"},
+	{ "categorie": "Imaginaire", "name" : "Dwarf"},
+	{ "categorie": "Imaginaire", "name" : "Elf"},
+	{ "categorie": "Imaginaire", "name" : "Squirtle"},
+	{ "categorie": "Imaginaire", "name" : "Charmander"},
+	{ "categorie": "Imaginaire", "name" : "Bulbusaur"},
+	{ "categorie": "Imaginaire", "name" : "Eevee"},
+	{ "categorie": "Imaginaire", "name" : "Dragon"},
+	{ "categorie": "Imaginaire", "name" : "Magician"},
+	{ "categorie": "Imaginaire", "name" : "Kraken"},
+	{ "categorie": "Imaginaire", "name" : "Angel"},
+	{ "categorie": "Imaginaire", "name" : "Demon"},
+	{ "categorie": "Imaginaire", "name" : "Ogre"},
+	{ "categorie": "Habitation", "name" : "Door"},
+	{ "categorie": "Habitation", "name" : "House"},
+	{ "categorie": "Habitation", "name" : "Bathroom"},
+	{ "categorie": "Habitation", "name" : "Bedroom"},
+	{ "categorie": "Habitation", "name" : "Kitchen"},
+	{ "categorie": "Habitation", "name" : "Flat"},
+	{ "categorie": "Habitation", "name" : "Restrooms"},
+	{ "categorie": "Habitation", "name" : "Saddler"},
+	{ "categorie": "Habitation", "name" : "Living Room"},
+	{ "categorie": "Habitation", "name" : "Castle"},
+	{ "categorie": "Habitation", "name" : "Attic"},
+	{ "categorie": "Habitation", "name" : "Cellar"},
+	{ "categorie": "Métiers", "name" : "Farmer"},
+	{ "categorie": "Métiers", "name" : "Cooker"},
+	{ "categorie": "Métiers", "name" : "Doctor"},
+	{ "categorie": "Métiers", "name" : "Teacher"},
+	{ "categorie": "Métiers", "name" : "Cleaner"},
+	{ "categorie": "Métiers", "name" : "Footballer"},
+	{ "categorie": "Métiers", "name" : "Musician"},
+	{ "categorie": "Métiers", "name" : "Writer"},
+	{ "categorie": "Métiers", "name" : "Accountant"},
+	{ "categorie": "Métiers", "name" : "Painter"},
+	{ "categorie": "Métiers", "name" : "Engineer"},
+	{ "categorie": "Métiers", "name" : "Astronaut"},
+	{ "categorie": "Métiers", "name" : "basketteur"},
+	{ "categorie": "Objet", "name" : "Table"},
+	{ "categorie": "Objet", "name" : "Scissors"},
+	{ "categorie": "Objet", "name" : "Shoes"},
+	{ "categorie": "Objet", "name" : "Board games"},
+	{ "categorie": "Objet", "name" : "Sword"},
+	{ "categorie": "Objet", "name" : "Shield"},
+	{ "categorie": "Objet", "name" : "Board games"},
+	{ "categorie": "Objet", "name" : "Headphones"},
+	{ "categorie": "Objet", "name" : "Computer"},
+	{ "categorie": "Objet", "name" : "Video games"},
+	{ "categorie": "Objet", "name" : "World Cup"},
+	{ "categorie": "Objet", "name" : "Knife"},
+	{ "categorie": "Objet", "name" : "Fork"},
+	]
+}
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
