@@ -11,7 +11,7 @@ public class Constants {
 	}
 	
 	public class Preferences {
-		public static final String SHARED_PREFERENCES_FILE_NAME = "wlTwitterSharedPrefs";
+		public static final String SHARED_PREFERENCES_FILE_NAME = "swipeToLearnSharedPrefs";
 		public static final String PREF_LOGIN = "prefLogin";
 		public static final String PREF_PASSWORD = "prefPassword";
 	}
