@@ -1,10 +1,24 @@
 package com.example.swipetolearn;
 
+import android.content.Context;
+
 import androidx.room.Database;
+import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {Player.class}, version = 1)
+@Database(entities = Player.class, exportSchema = false,version = 1)
 public abstract class UserDatabase extends RoomDatabase {
-    public abstract PlayerDao playerDao();
+    private static final String DB_NAME = "Player_db";
+    private static UserDatabase instance;
 
+    public static synchronized UserDatabase getInstance(Context context){
+        if (instance == null){
+            instance = Room.databaseBuilder(context.getApplicationContext(), UserDatabase.class, DB_NAME)
+                    .fallbackToDestructiveMigration()
+                    .build();
+
+        }
+        return instance;
+    }
+    public abstract PlayerDao playerDao();
 }
