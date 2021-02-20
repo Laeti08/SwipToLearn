@@ -6,7 +6,7 @@ public class RetroBanqueImage {
 
         @SerializedName("Categorie")
         private String categorie;
-        @SerializedName("Image")
+        @SerializedName("Images")
         private String image;
         @SerializedName("MotAnglais")
         private String motAnglais;
