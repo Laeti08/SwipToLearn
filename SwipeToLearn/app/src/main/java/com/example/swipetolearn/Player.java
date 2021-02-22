@@ -11,9 +11,9 @@ public class Player {
     @PrimaryKey(autoGenerate = true)
     private int idPlayer;
     @ColumnInfo
-    private String Login;
+    private String login;
     @ColumnInfo
-    private String Password;
+    private String password;
     @ColumnInfo
     private int score;
 
@@ -21,8 +21,8 @@ public class Player {
 
     public Player(int idPlayer, String login, String password, int score) {
         this.idPlayer = idPlayer;
-        Login = login;
-        Password = password;
+        this.login = login;
+        this.password = password;
         this.score = score;
     }
 
@@ -35,19 +35,19 @@ public class Player {
     }
 
     public String getLogin() {
-        return Login;
+        return login;
     }
 
     public void setLogin(String login) {
-        Login = login;
+        login = login;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String password) {
-        Password = password;
+        password = password;
     }
 
     public int getScore() {
