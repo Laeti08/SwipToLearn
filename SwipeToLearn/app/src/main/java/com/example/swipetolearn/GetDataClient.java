@@ -6,10 +6,10 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface GetDataClient {
-    @GET("/BanqueImage.json")
+    @GET("BanqueImage.json")
     Call<List<RetroBanqueImage>> getAllImages();
 
-    @GET("/name.json")
+    @GET("name.json")
     Call<List<RetroName>> getAllWords();
 
 

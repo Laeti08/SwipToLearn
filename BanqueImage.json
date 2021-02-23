@@ -1,22 +1,20 @@
-{
-	"BanqueQuestion":[
+[
 	{	"Categorie":"Animaux",
 		"Images":"https://previews.123rf.com/images/ivonnewierink/ivonnewierink1901/ivonnewierink190100062/116094443-donkey-in-meadows-in-front-of-the-farm.jpg",
 		"MotAnglais":"Donkey",
-		"Traduction":"Âne",
+		"Traduction":"Âne"
 	},
 	{
 		"Categorie":"Animaux",
 		"Images":"https://www.zoologiste.com/images/xl/cochon.jpg",
 		"MotAnglais":"Pig",
-		"Traduction":"Cochon",
+		"Traduction":"Cochon"
 	},
-
 	{
 		"Categorie":"Animaux",
 		"Images":"https://previews.123rf.com/images/lightfieldstudios/lightfieldstudios1811/lightfieldstudios181116755/111505216-cute-frenchie-dog-lying-on-floor-and-looking-up.jpg",
 		"MotAnglais":"Dog",
-		"Traduction":"Chien",
+		"Traduction":"Chien"
 	},
 
 	{
@@ -29,198 +27,197 @@
 		"Categorie":"Animaux",
 		"Images":"https://previews.123rf.com/images/kwadrat70/kwadrat701812/kwadrat70181200053/114131095-cremello-horse-with-long-mane-running-through-a-meadow.jpg",
 		"MotAnglais":"Horse",
-		"Traduction":"Cheval",
+		"Traduction":"Cheval"
 	},
-
 	{
 		"Categorie":"Animaux",
 		"Images":"https://previews.123rf.com/images/mirco1/mirco11810/mirco1181000026/118384812-close-up-portrait-of-an-aldabra-giant-tortoise.jpg",
 		"MotAnglais":"Turtle",
-		"Traduction":"Tortue",
+		"Traduction":"Tortue"
 	},
 
 	{
 		"Categorie":"Animaux",
 		"Images":"https://previews.123rf.com/images/maya23k/maya23k1901/maya23k190100274/115064856-easter-rabbit-with-lilac-in-vase-on-white-background.jpg",
 		"MotAnglais":"Rabbit",
-		"Traduction":"Lapin",
+		"Traduction":"Lapin"
 	},
 
 	{
 		"Categorie":"Habitation",
 		"Images":"https://previews.123rf.com/images/dropthepress/dropthepress1905/dropthepress190500429/122762250-vertical-front-door-with-glass-panel-and-holiday-decoration-against-a-ribbed-white-wall-plants-on-co.jpg",
 		"MotAnglais":"Door",
-		"Traduction":"Porte",
+		"Traduction":"Porte"
 	},
 	{
 		"Categorie":"Habitation",
 		"Images":"https://previews.123rf.com/images/breadmaker/breadmaker1602/breadmaker160200011/53569685-new-luxury-home-ext%C3%A9rieur-de-nuit-orientation-vertical.jpg",
 		"MotAnglais":"House",
-		"Traduction":"Maison",
+		"Traduction":"Maison"
 	},
 	{
 		"Categorie":"Habitation",
 		"Images":"https://previews.123rf.com/images/kuprin28/kuprin281812/kuprin28181202041/113851367-beautiful-kitchen-with-dark-furniture-of-an-new-loft-3d-rendering-.jpg",
 		"MotAnglais":"Kitchen",
-		"Traduction":"Cuisine",
+		"Traduction":"Cuisine"
 	},
 	{
 		"Categorie":"Habitation",
 		"Images":"https://previews.123rf.com/images/iriana88w/iriana88w1701/iriana88w170100152/70308431-ma%C3%AEtre-de-bains-en-marbre-blanc-et-gris-incroyable-avec-une-grande-douche-de-verre-walk-in-baignoire-a.jpg",
 		"MotAnglais":"Bathroom",
-		"Traduction":"Salle de bain",
+		"Traduction":"Salle de bain"
 	},
 	{
 		"Categorie":"Habitation",
 		"Images":"https://previews.123rf.com/images/runna/runna1902/runna190200005/116636201-teenage-bedroom-3d-render-there-are-wooden-floor-and-white-wall-furnished-with-brown-bed-and-white-c.jpg",
 		"MotAnglais":"Bedroom",
-		"Traduction":"Chambre",
+		"Traduction":"Chambre"
 	},
 	{
 		"Categorie":"Habitation",
 		"Images":"https://previews.123rf.com/images/firina/firina1610/firina161000019/69522591-potager-en-fin-d-%C3%A9t%C3%A9-herbes-fleurs-et-l%C3%A9gumes-dans-la-cour-jardin-%C3%A0-le-jardinage-%C3%A9cologique.jpg",
 		"MotAnglais":"Garden",
-		"Traduction":"Jardin",
+		"Traduction":"Jardin"
 	},
 	{
 		"Categorie":"Habitation",
 		"Images":"https://previews.123rf.com/images/morris71/morris711608/morris71160800618/62332835-immeuble-moderne.jpg",
 		"MotAnglais":"Flat",
-		"Traduction":"Appartement",
+		"Traduction":"Appartement"
 	},
 
 	{
 		"Categorie":"Transport",
 		"Images":"https://previews.123rf.com/images/scanrail/scanrail1101/scanrail110100045/8644087-vol-avion-de-ligne-dans-le-ciel-bleu.jpg",
 		"MotAnglais":"Airplane",
-		"Traduction":"Avion",
+		"Traduction":"Avion"
 	},
 	{
 		"Categorie":"Transport",
 		"Images":"https://previews.123rf.com/images/volod2943/volod29431608/volod2943160800008/63220669-bande-dessin%C3%A9e-de-v%C3%A9lo.jpg",
 		"MotAnglais":"Bicycle",
-		"Traduction":"Vélo",
+		"Traduction":"Vélo"
 	},
 	{
 		"Categorie":"Transport",
 		"Images":"https://previews.123rf.com/images/tonobalaguer/tonobalaguer1111/tonobalaguer111100855/11191291-yacht-de-luxe-%C3%A0-la-plage-de-formentera-illetes-turquoise-de.jpg",
 		"MotAnglais":"Boat",
-		"Traduction":"Bâteau",
+		"Traduction":"Bâteau"
 	},
 	{
 		"Categorie":"Transport",
 		"Images":"https://previews.123rf.com/images/algre/algre1711/algre171100321/90571534-voiture-rouge.jpg",
 		"MotAnglais":"Car",
-		"Traduction":"Voiture",
+		"Traduction":"Voiture"
 	},
 	{
 		"Categorie":"Transport",
 		"Images":"https://previews.123rf.com/images/satina/satina1602/satina160200108/53478104-la-station-de-m%C3%A9tro-%C3%A0-paris.jpg",
 		"MotAnglais":"Subway",
-		"Traduction":"Métro",
+		"Traduction":"Métro"
 	},
 	{
 		"Categorie":"Transport",
 		"Images":"https://previews.123rf.com/images/vectorcreator/vectorcreator1602/vectorcreator160200015/53454424-ensemble-de-silhouettes-modernes-de-trains-%C3%A0-grande-vitesse-des-contours-des-contours-train-%C3%A0-grande-vit.jpg",
 		"MotAnglais":"Train",
-		"Traduction":"Train",
+		"Traduction":"Train"
 	},
 	{
 		"Categorie":"Transport",
 		"Images":"https://previews.123rf.com/images/belchonock/belchonock1812/belchonock181200607/112877388-pair-of-stylish-quad-roller-skates-on-color-background-space-for-text.jpg",
 		"MotAnglais":"Roller Skates",
-		"Traduction":"Patin à roulettes",
+		"Traduction":"Patin à roulettes"
 	},
 
 	{
 		"Categorie":"Nourriture",
 		"Images":"https://previews.123rf.com/images/bystudio/bystudio1908/bystudio190800228/129878141-plastic-plastic-bottle-isolated-on-a-white-background.jpg",
 		"MotAnglais":"Water",
-		"Traduction":"Eau",
+		"Traduction":"Eau"
 	},
 	{
 		"Categorie":"Nourriture",
 		"Images":"https://previews.123rf.com/images/yurakp/yurakp1506/yurakp150600054/40864485-fraises-isol%C3%A9-sur-le-fond-blanc-.jpg",
 		"MotAnglais":"Strawberry",
-		"Traduction":"Fraise",
+		"Traduction":"Fraise"
 	},
 
 	{
 		"Categorie":"Nourriture",
 		"Images":"https://previews.123rf.com/images/dariaustiugova/dariaustiugova1905/dariaustiugova190500065/123823580-fresh-ripe-cherry-with-leaves-elements-set-.jpg",
 		"MotAnglais":"Cherry",
-		"Traduction":"Cerise",
+		"Traduction":"Cerise"
 	},
 
 	{
 		"Categorie":"Nourriture",
 		"Images":"https://previews.123rf.com/images/gdolgikh/gdolgikh1812/gdolgikh181200131/113111188-pizza-with-salami-and-chorizo.jpg",
 		"MotAnglais":"Pizza",
-		"Traduction":"Pizza",
+		"Traduction":"Pizza"
 	},
 
 	{
 		"Categorie":"Nourriture",
 		"Images":"https://previews.123rf.com/images/volff/volff0908/volff090800049/5308904-framboises-objets-sur-fond-blanc.jpg",
 		"MotAnglais":"Raspberry",
-		"Traduction":"Framboise",
+		"Traduction":"Framboise"
 	},
 
 	{
 		"Categorie":"Nourriture",
 		"Images":"https://previews.123rf.com/images/kupparock/kupparock1211/kupparock121101244/16312299-bananes-isol%C3%A9s-sur-fond-blanc.jpg",
 		"MotAnglais":"Banana",
-		"Traduction":"Banane",
+		"Traduction":"Banane"
 	},
 
 	{
 		"Categorie":"Nourriture",
 		"Images":"https://previews.123rf.com/images/baibaz/baibaz1810/baibaz181000028/110914550-set-of-fresh-whole-and-sliced-potatoes-isolated-on-white-background-top-view.jpg",
 		"MotAnglais":"Potatoes",
-		"Traduction":"pomme de terre",
+		"Traduction":"pomme de terre"
 	},
 
 	{
 		"Categorie":"Métiers",
 		"Images":"https://previews.123rf.com/images/dolgachov/dolgachov1701/dolgachov170100150/68454745-l-homme-nourrir-les-vaches-avec-du-foin-dans-l-%C3%A9table-%C3%A0-la-ferme-laiti%C3%A8re.jpg",
 		"MotAnglais":"Farmer",
-		"Traduction":"Agriculteur",
+		"Traduction":"Agriculteur"
 	},
 	{
 		"Categorie":"Métiers",
 		"Images":"https://previews.123rf.com/images/stocking/stocking1604/stocking160401621/55653858-smiling-chef-dans-sa-cuisine.jpg",
 		"MotAnglais":"Cooker",
-		"Traduction":"Cuisinier",
+		"Traduction":"Cuisinier"
 	},
 	{
 		"Categorie":"Métiers",
 		"Images":"https://previews.123rf.com/images/deagreez/deagreez1811/deagreez181100744/112274769-positive-optimist-scientist-occupation-stubble-brunet-hair-man-s.jpg",
 		"MotAnglais":"Doctor",
-		"Traduction":"Medecin",
+		"Traduction":"Medecin"
 	},
 	{
 		"Categorie":"Métiers",
 		"Images":"https://previews.123rf.com/images/lembergvector/lembergvector1708/lembergvector170800094/84136446-jeune-enseignante-pr%C3%A8s-d-un-tableau-d-enseignant-en-classe-%C3%A0-l-%C3%A9cole-au-coll%C3%A8ge-ou-%C3%A0-l-universit%C3%A9-pe.jpg",
 		"MotAnglais":"Teacher",
-		"Traduction":"Professeur",
+		"Traduction":"Professeur"
 	},
 	{
 		"Categorie":"Metier",
 		"Images":"https://previews.123rf.com/images/microone/microone1801/microone180100440/93866604-rock-roll-roll-musique-bande-dessin%C3%A9e-silhouettes-vecteur-avec-des-choses-de-musique-musiciens-jouant-.jpg",
 		"MotAnglais":"Musician",
-		"Traduction":"Musicien",
+		"Traduction":"Musicien"
 	},
 	{
 		"Categorie":"Métiers",
 		"Images":"https://previews.123rf.com/images/serezniy/serezniy1812/serezniy181239093/114123251-female-artist-painting-picture-in-workshop.jpg",
 		"MotAnglais":"Painter",
-		"Traduction":"Peintre",
+		"Traduction":"Peintre"
 	},
 	{
 		"Categorie":"Métiers",
 		"Images":"https://previews.123rf.com/images/tomertu/tomertu1602/tomertu160200017/51657494-r%C3%A9tro-image-filtr%C3%A9e-de-la-machine-%C3%A0-%C3%A9crire-vintage-cahier-vierge-tasse-de-caf%C3%A9-et-smartphone-sur-la-table-en.jpg",
 		"MotAnglais":"Writer",
-		"Traduction":"Ecrivain",
+		"Traduction":"Ecrivain"
 	},
 
 	{
@@ -308,7 +305,4 @@
 		"MotAnglais":"Squirtle",
 		"Traduction":"Carapuce"
 	},
-	]
-
-
-}
+]

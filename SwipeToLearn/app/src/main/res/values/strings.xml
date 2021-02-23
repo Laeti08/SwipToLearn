@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">SwipeToLearn</string>
     <string name="todo">TODO</string>
+    <string name="title">title</string>
+
 
 </resources>

@@ -9,9 +9,11 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.Gson;
 import com.squareup.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BanqueImageRecyclerView extends RecyclerView.Adapter<BanqueImageRecyclerView.ViewHolder>{
@@ -37,7 +39,7 @@ public class BanqueImageRecyclerView extends RecyclerView.Adapter<BanqueImageRec
             mView = itemView;
 
             txtTitle = mView.findViewById(R.id.title);
-            coverImage = mView.findViewById(R.id.coverImage);
+            coverImage = mView.findViewById(R.id.imageText);
         }
     }
 
@@ -61,8 +63,12 @@ public class BanqueImageRecyclerView extends RecyclerView.Adapter<BanqueImageRec
 
     }
 
+
+
     @Override
     public int getItemCount() {
         return dataList.size();
     }
+
+
 }

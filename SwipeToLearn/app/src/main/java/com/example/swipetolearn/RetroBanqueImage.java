@@ -5,13 +5,13 @@ import com.google.gson.annotations.SerializedName;
 public class RetroBanqueImage {
 
         @SerializedName("Categorie")
-        private String categorie;
+        public String categorie;
         @SerializedName("Images")
-        private String image;
+        public String image;
         @SerializedName("MotAnglais")
-        private String motAnglais;
+        public String motAnglais;
         @SerializedName("Traduction")
-        private String traduction;
+        public String traduction;
 
 
         public RetroBanqueImage(String categorie, String image, String motAnglais, String traduction) {

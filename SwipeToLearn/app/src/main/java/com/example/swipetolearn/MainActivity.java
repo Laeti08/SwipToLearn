@@ -1,12 +1,16 @@
 package com.example.swipetolearn;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
+
+import com.google.gson.Gson;
+
+import org.json.JSONObject;
 
 import java.util.List;
 
@@ -17,6 +21,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
     private BanqueImageRecyclerView adapter;
     private RecyclerView recyclerView;
+    public RetroBanqueImage image;
     ProgressDialog progressDoalog;
 
     @Override
@@ -24,9 +29,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        progressDoalog = new ProgressDialog(MainActivity.this);
-        progressDoalog.setMessage("Loading....");
-        progressDoalog.show();
 
         GetDataClient service = RetroClientInstance.getRetrofitInstance().create(GetDataClient.class);
         Call<List<RetroBanqueImage>> call = service.getAllImages();
@@ -34,37 +36,40 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<List<RetroBanqueImage>>() {
             @Override
             public void onResponse(Call<List<RetroBanqueImage>> call, Response<List<RetroBanqueImage>> response) {
-                progressDoalog.dismiss();
-                generateDataList(response.body());
+
+                Log.d("response",response.body().size()+" ");
+                //generateDataList(response.body());
             }
 
              public void onFailure(Call<List<RetroBanqueImage>> call, Throwable t) {
-                progressDoalog.dismiss();
+                //progressDoalog.dismiss();
+
+                 t.printStackTrace();
                 Toast.makeText(MainActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
             }
         });
 
-        callName.enqueue(new Callback<List<RetroName>>() {
+        /*callName.enqueue(new Callback<List<RetroName>>() {
             @Override
-            public void onResponse(Call<List<RetroName>> call, Response<List<RetroName>> response) {
-                progressDoalog.dismiss();
+            public void onResponse(Call<List<RetroName>> callName, Response<List<RetroName>> response) {
+                //progressDoalog.dismiss();
 
             }
 
             @Override
             public void onFailure(Call<List<RetroName>> call, Throwable t) {
-                progressDoalog.dismiss();
+                //progressDoalog.dismiss();
                 Toast.makeText(MainActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
     }
-    private void generateDataList(List<RetroBanqueImage> photoList) {
+    /*private void generateDataList(List<RetroBanqueImage> photoList) {
         recyclerView = findViewById(R.id.customRecyclerView);
         adapter = new BanqueImageRecyclerView(this,photoList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
-    }
+    }*/
 
 
 }
