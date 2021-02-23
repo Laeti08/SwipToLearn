@@ -31,13 +31,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         GetDataClient service = RetroClientInstance.getRetrofitInstance().create(GetDataClient.class);
+
         Call<List<RetroBanqueImage>> call = service.getAllImages();
         Call<List<RetroName>> callName = service.getAllWords();
         call.enqueue(new Callback<List<RetroBanqueImage>>() {
             @Override
             public void onResponse(Call<List<RetroBanqueImage>> call, Response<List<RetroBanqueImage>> response) {
 
-                Log.d("response",response.body().size()+" ");
+                Log.d("response",response.body().get(0).traduction);
                 //generateDataList(response.body());
             }
 
@@ -53,12 +54,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<RetroName>> callName, Response<List<RetroName>> response) {
                 //progressDoalog.dismiss();
+                Log.d("response",response.body().size()+" ");
 
             }
 
             @Override
             public void onFailure(Call<List<RetroName>> call, Throwable t) {
                 //progressDoalog.dismiss();
+                t.printStackTrace();
                 Toast.makeText(MainActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
             }
         });*/
