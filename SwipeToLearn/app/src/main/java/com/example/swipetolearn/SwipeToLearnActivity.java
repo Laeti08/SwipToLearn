@@ -4,6 +4,7 @@ import android.content.Intent;
 
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -16,6 +17,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.wenchao.cardstack.CardStack;
 
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 
 public class SwipeToLearnActivity extends AppCompatActivity implements CardStack.CardEventListener {
 
@@ -27,6 +34,43 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_layout);
+
+        //Appel aux fichiers Json
+        GetDataClient service = RetroClientInstance.getRetrofitInstance().create(GetDataClient.class);
+
+        Call<List<RetroBanqueImage>> call = service.getAllImages();
+        Call<List<RetroName>> callName = service.getAllWords();
+        call.enqueue(new Callback<List<RetroBanqueImage>>() {
+            @Override
+            public void onResponse(Call<List<RetroBanqueImage>> call, Response<List<RetroBanqueImage>> response) {
+
+                Log.d("response",response.body().get(0).image);
+
+            }
+
+            public void onFailure(Call<List<RetroBanqueImage>> call, Throwable t) {
+
+
+                t.printStackTrace();
+                Toast.makeText(SwipeToLearnActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        callName.enqueue(new Callback<List<RetroName>>() {
+            @Override
+            public void onResponse(Call<List<RetroName>> callName, Response<List<RetroName>> response) {
+
+                Log.d("responseName",response.body().get(0).getName());
+
+            }
+
+            @Override
+            public void onFailure(Call<List<RetroName>> call, Throwable t) {
+
+                t.printStackTrace();
+                Toast.makeText(SwipeToLearnActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+            }
+        });
         
         initImages();
         card_stack=(CardStack)findViewById(R.id.card_stack);
@@ -43,7 +87,10 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
             startActivity(intent);
         });
 
+
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
