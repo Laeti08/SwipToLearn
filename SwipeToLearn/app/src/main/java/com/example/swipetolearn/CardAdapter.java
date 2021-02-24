@@ -9,7 +9,11 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class CardAdapter extends ArrayAdapter<Integer> {
+import com.squareup.picasso.Picasso;
+
+import static com.example.swipetolearn.R.id.image_content;
+
+public class CardAdapter extends ArrayAdapter<RetroBanqueImage> {
 
     public CardAdapter( Context context, int resource) {
         super(context, resource);
@@ -18,8 +22,9 @@ public class CardAdapter extends ArrayAdapter<Integer> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        ImageView imgView=(ImageView) convertView.findViewById(R.id.image_content);
-        imgView.setImageResource(getItem(position));
+        ImageView imgView=(ImageView) convertView.findViewById(image_content);
+        //imgView.setImageResource(getItem(position));
+        Picasso.get().load(getItem(position).getImage()).into(imgView);
         return convertView;
     }
 }

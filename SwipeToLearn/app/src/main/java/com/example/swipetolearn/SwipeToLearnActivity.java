@@ -35,7 +35,8 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_layout);
 
-        //Appel aux fichiers Json
+
+        //APPEL AUX FICHIERS JSON
         GetDataClient service = RetroClientInstance.getRetrofitInstance().create(GetDataClient.class);
 
         Call<List<RetroBanqueImage>> call = service.getAllImages();
@@ -43,9 +44,8 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
         call.enqueue(new Callback<List<RetroBanqueImage>>() {
             @Override
             public void onResponse(Call<List<RetroBanqueImage>> call, Response<List<RetroBanqueImage>> response) {
-
                 Log.d("response",response.body().get(0).image);
-
+                card_adapter.addAll(response.body());
             }
 
             public void onFailure(Call<List<RetroBanqueImage>> call, Throwable t) {
@@ -71,8 +71,11 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
                 Toast.makeText(SwipeToLearnActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
             }
         });
-        
-        initImages();
+
+
+
+        //MISE EN PLACE SWIPECARD
+        card_adapter = new CardAdapter(getApplicationContext(), 0);
         card_stack=(CardStack)findViewById(R.id.card_stack);
         card_stack.setContentResource(R.layout.card_layout);
         card_stack.setStackMargin(20);
@@ -81,15 +84,15 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
         card_stack.setListener(this);
 
 
+
+
+        //BOUTON VOIR LES SCORES
         seeScoresButton = (Button) findViewById(R.id.seeScoresButton);
         seeScoresButton.setOnClickListener(v -> {
             Intent intent = new Intent(SwipeToLearnActivity.this, SwipeToLearnScoresActivity.class);
             startActivity(intent);
         });
-
-
     }
-
 
 
     @Override
@@ -125,31 +128,6 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
 
     }
 
-    public boolean gameFunction(int i){
-        //A FAIRE
-        return false;
-    }
-
-    private void gameResult(boolean result){
-        String message;
-        if (result==true){
-            message="Résultat correct, bien joué !";
-            Toast.makeText(this, message,Toast.LENGTH_SHORT).show();
-        }
-        else{
-            message="Resultat incorrect, dommage !";
-            Toast.makeText(this, message,Toast.LENGTH_SHORT).show();
-        }
-        //Affichge trueName, la correction
-    }
-
-    private void initImages() {
-        card_adapter=new CardAdapter(getApplicationContext(),0);
-        card_adapter.add(R.drawable.batman);
-        card_adapter.add(R.drawable.logo2);
-        card_adapter.add(R.drawable.superman);
-    }
-
     @Override
     public boolean swipeEnd(int i, float v) {
         if(i==0 || i==2){
@@ -160,7 +138,6 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
             //gameFunction
             Toast.makeText(this,"a droite",Toast.LENGTH_LONG).show();
         }
-
         return (v>300)?true:false;
     }
 
@@ -185,5 +162,30 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
     public void topCardTapped() {
 
     }
+
+
+
+
+
+
+    public boolean gameFunction(int i){
+        //A FAIRE
+        return false;
+    }
+
+    private void gameResult(boolean result){
+        String message;
+        if (result==true){
+            message="Résultat correct, bien joué !";
+            Toast.makeText(this, message,Toast.LENGTH_SHORT).show();
+        }
+        else{
+            message="Resultat incorrect, dommage !";
+            Toast.makeText(this, message,Toast.LENGTH_SHORT).show();
+        }
+        //Affichge trueName, la correction
+    }
+
+
 
 }
