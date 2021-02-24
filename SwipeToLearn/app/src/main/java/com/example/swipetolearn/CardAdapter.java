@@ -22,9 +22,9 @@ public class CardAdapter extends ArrayAdapter<RetroBanqueImage> {
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {  //Chargement de la bonne image dans imageView
         ImageView imgView=(ImageView) convertView.findViewById(image_content);
-        Picasso.get().load(getItem(position).getImage()).into(imgView);
+        Picasso.get().load(getItem(position).getImage()).into(imgView);     //chargement de l'image dans ImageView
         return convertView;
     }
 

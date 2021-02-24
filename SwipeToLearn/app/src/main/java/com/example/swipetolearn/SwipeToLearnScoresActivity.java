@@ -10,20 +10,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SwipeToLearnScoresActivity  extends Activity {
 
-    public static TextView zonescore;//VERSION NULL
+    public static TextView zonescore;   //zone de texte où est affiché le score
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.score_layout);
+        setContentView(R.layout.score_layout); //Instance du score_layout
 
-        //VERSION NULLzonescore=(TextView) findViewById(R.id.scoreText);
+        zonescore=(TextView) findViewById(R.id.scoreText);  //Identification de zonescore
 
     }
 
 
-    public static void setScoreText(int numberVictory, int swipeNumber){//VERSION NULL
-        zonescore.setText(numberVictory+"");
+    public static void setScoreText(int numberVictory, int swipeNumber){    //Doit mettre à jour le score du joueur
+        //zonescore.setText(numberVictory+"");
     }
 
 

@@ -32,20 +32,20 @@ import static com.example.swipetolearn.SwipeToLearnScoresActivity.setScoreText;
 
 public class SwipeToLearnActivity extends AppCompatActivity implements CardStack.CardEventListener {
 
-    private Button seeScoresButton;
+    private Button seeScoresButton; //Bouton "voir les scores", changement d'activité
     private CardStack card_stack;
     private CardAdapter card_adapter;
-    private TextView textView;
-    private int index=0;
-    private int swipeNumber=0;
-    private int numberVictory=0;
+    private TextView textView; //zone de texte où se trouve le mot en Anglais
+    private int index=0; //index de l'image affichée (elles sont dans l'ordre)
+    private int swipeNumber=0; //Nombre de swipe joué
+    private int numberVictory=0; //Nombre de victoire
     private String[] englishwordList={"Donkey","Pig","Dog","Koala","Horse","Turtle","Rabbit","Door","House","Kitchen","Bathroom","Bedroom","Garden","Flat","Airplane","Bicycle","Boat","Car","Subway","Train","Roller Skates","Water","Strawberry","Cherry","Pizza","Raspberry","Banana","Potatoes","Farmer","Cooker","Doctor","Teacher","Musician","Painter","Writer","World cup","Scissors","Table","Computer","Shield","Board Game","Headphones","Charmander","Magician","Dragon","Angel","Elf","Dwarf","Squirtle"};
-
+    //Creation de la liste manuelle des mots
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.game_layout);
+        setContentView(R.layout.game_layout); //Instance de game_layout
 
 
         //APPEL AUX FICHIERS JSON
@@ -59,8 +59,8 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
                 Log.d("response",response.body().get(0).image);
                 card_adapter.addAll(response.body());//Ajout du contenu du fichier JSON
 
-                textView=(TextView) findViewById(R.id.gameName);
-                textView.setText(englishwordList[0]);
+                textView=(TextView) findViewById(R.id.gameName);    //Identification de textView
+                textView.setText(englishwordList[0]);   //Initialisation de textView
             }
 
             public void onFailure(Call<List<RetroBanqueImage>> call, Throwable t) {
@@ -70,6 +70,8 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
                 Toast.makeText(SwipeToLearnActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
             }
         });
+
+
         //Nous n'avons pas eu le temps d'implementer les fonctions pour utiliser ce fichier JSON
         /*callName.enqueue(new Callback<List<RetroName>>() {
             @Override
@@ -88,7 +90,6 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
         });*/
 
 
-
         //MISE EN PLACE SWIPECARD
         card_adapter = new CardAdapter(getApplicationContext(), 0);
         card_stack=(CardStack)findViewById(R.id.card_stack);
@@ -97,11 +98,6 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
         card_stack.setAdapter(card_adapter);
 
         card_stack.setListener(this);
-
-
-
-
-
 
 
         //BOUTON VOIR LES SCORES
@@ -121,13 +117,13 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
 
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu) { //Creation d'un menu pour changer de categorie
         getMenuInflater().inflate(R.menu.category_menu,menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) { //Creation des items du menu
         switch (item.getItemId()){
             case R.id.animaux:
                 Toast.makeText(this,"catégorie animaux sélectionnée",Toast.LENGTH_LONG).show();
@@ -153,42 +149,39 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
 
     }
 
-    public int returnIndex(String[] listString){
+    public int returnIndex(String[] listString){ //permet de retourner l'index du mot en anglais dans la liste
         for (int i=0;i<listString.length;i++){
-            Log.d("DEBUG",listString[i]);
-            Log.d("Textview",textView.getText().toString());
             if(listString[i].equals(textView.getText().toString())){
                 return i;
             }
         }
-        Log.d("DEBUG","apres la boucle");
         return -1;
     }
 
     @Override
     public boolean swipeEnd(int i, float v) {
         if(i==0 || i==2){
-            //REPONSE NON
-            if(index==returnIndex(englishwordList)){
+            //L'utilisateur dit que c'est faux
+            if(index==returnIndex(englishwordList)){ //Si c'est réellement juste
                 gameResult(false);
             }
             else{
-                gameResult(true);
+                gameResult(true); //Si c'est réellement faux
             }
         }
         if(i==1 || i==3){
-            //REPONSE OUI
+            //L'utilisateur dit que c'est juste
             if(index==returnIndex(englishwordList)){
-                gameResult(true);
+                gameResult(true); //Si c'est réellement juste
             }
             else{
-                gameResult(false);
+                gameResult(false); //Si c'est réellement faux
             }
         }
         int round= (int)(Math.random()*100);
         if(round<60){
             int choice = (int)(Math.random() * 48);
-            textView.setText(englishwordList[choice]);
+            textView.setText(englishwordList[choice]);  //Permet de mélanger les mots en anglais
         }
         else{
             textView.setText(englishwordList[index+1]);
@@ -221,19 +214,19 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
     }
 
 
-    private void gameResult(boolean result){
+    private void gameResult(boolean result){    //Affiche un toast pour annoncer le resultat sur l'ecran
         String message;
         if (result==true){
             message="Résultat correct, bien joué !";
             Toast.makeText(this, message,Toast.LENGTH_SHORT).show();
-            numberVictory++;
+            numberVictory++;    //compte le nombre de victoire
         }
         else{
             message="Resultat incorrect, dommage !";
             Toast.makeText(this, message,Toast.LENGTH_SHORT).show();
         }
-        swipeNumber++;
-        setScoreText(numberVictory,swipeNumber);//VERSION NULL
+        swipeNumber++;  //compte le nombre de parties jouées
+        setScoreText(numberVictory,swipeNumber);   //Permet de mettre à jour le score du joueur **ne fonctionne pas**
     }
 
 
