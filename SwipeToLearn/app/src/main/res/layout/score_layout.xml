@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F45C36">
+    android:background="#F45C36" >
 
     <TextView
         android:id="@+id/scoreTitle"
