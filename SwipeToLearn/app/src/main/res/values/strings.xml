@@ -14,5 +14,7 @@
     <string name="login">Login</string>
     <string name="votre_score">Votre score</string>
     <string name="swipe_to_learn">Swipe To Learn</string>
+    <string name="gameimage">Image du jeu</string>
+    <string name="seeScores">Voir les scores</string>
 
 </resources>

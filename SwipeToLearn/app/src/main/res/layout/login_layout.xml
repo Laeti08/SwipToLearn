@@ -60,7 +60,7 @@
         android:layout_height="50dp"
         android:backgroundTint="#F45C36"
         android:fontFamily="@font/bangers"
-        android:text="Login"
+        android:text="@string/login"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

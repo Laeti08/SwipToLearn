@@ -1,38 +1,142 @@
 package com.example.swipetolearn;
 
+import android.content.Intent;
+
 import android.os.Bundle;
-import android.view.MotionEvent;
+
+import android.view.Menu;
+import android.view.MenuItem;
+
+import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SwipeToLearnActivity extends AppCompatActivity {
-    private SwipeGestureDetector gestureDetector;
+import com.wenchao.cardstack.CardStack;
+
+
+public class SwipeToLearnActivity extends AppCompatActivity implements CardStack.CardEventListener {
+
+    private Button seeScoresButton;
+    private CardStack card_stack;
+    private CardAdapter card_adapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_layout);
+        
+        initImages();
+        card_stack=(CardStack)findViewById(R.id.card_stack);
+        card_stack.setContentResource(R.layout.card_layout);
+        card_stack.setStackMargin(20);
+        card_stack.setAdapter(card_adapter);
 
-        gestureDetector=new SwipeGestureDetector(this);
+        card_stack.setListener(this);
+
+
+        seeScoresButton = (Button) findViewById(R.id.seeScoresButton);
+        seeScoresButton.setOnClickListener(v -> {
+            Intent intent = new Intent(SwipeToLearnActivity.this, SwipeToLearnScoresActivity.class);
+            startActivity(intent);
+        });
+
     }
 
     @Override
-    public boolean dispatchTouchEvent(MotionEvent event) {
-        return gestureDetector.onTouchEvent(event);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.category_menu,menu);
+        return true;
     }
 
-    public void onSwipe(SwipeGestureDetector.SwipeDirection direction) {
-        String message="";
-        switch (direction){
-            case LEFT_TO_RIGHT:
-                message="Left to right swipe";
-                break;
-            case RIGHT_TO_LEFT:
-                message="Right to left swipe";
-                break;
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.animaux:
+                Toast.makeText(this,"catégorie animaux sélectionnée",Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.habitation:
+                Toast.makeText(this,"catégorie habitation sélectionnée",Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.imaginaire:
+                Toast.makeText(this,"catégorie imaginaire sélectionnée",Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.objet:
+                Toast.makeText(this,"catégorie objet sélectionnée",Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.nourriture:
+                Toast.makeText(this,"catégorie nourriture sélectionnée",Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.metier:
+                Toast.makeText(this,"catégorie métier sélectionnée",Toast.LENGTH_LONG).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        Toast.makeText(this, message,Toast.LENGTH_SHORT).show();
+
     }
+
+    public boolean gameFunction(int i){
+        //A FAIRE
+        return false;
+    }
+
+    private void gameResult(boolean result){
+        String message;
+        if (result==true){
+            message="Résultat correct, bien joué !";
+            Toast.makeText(this, message,Toast.LENGTH_SHORT).show();
+        }
+        else{
+            message="Resultat incorrect, dommage !";
+            Toast.makeText(this, message,Toast.LENGTH_SHORT).show();
+        }
+        //Affichge trueName, la correction
+    }
+
+    private void initImages() {
+        card_adapter=new CardAdapter(getApplicationContext(),0);
+        card_adapter.add(R.drawable.batman);
+        card_adapter.add(R.drawable.logo2);
+        card_adapter.add(R.drawable.superman);
+    }
+
+    @Override
+    public boolean swipeEnd(int i, float v) {
+        if(i==0 || i==2){
+            //gameFunction
+            Toast.makeText(this,"a gauche",Toast.LENGTH_LONG).show();
+        }
+        if(i==1 || i==3){
+            //gameFunction
+            Toast.makeText(this,"a droite",Toast.LENGTH_LONG).show();
+        }
+
+        return (v>300)?true:false;
+    }
+
+
+    @Override
+    public boolean swipeStart(int i, float v) {
+
+        return false;
+    }
+
+    @Override
+    public boolean swipeContinue(int i, float v, float v1) {
+        return false;
+    }
+
+    @Override
+    public void discarded(int i, int i1) {
+
+    }
+
+    @Override
+    public void topCardTapped() {
+
+    }
+
 }
