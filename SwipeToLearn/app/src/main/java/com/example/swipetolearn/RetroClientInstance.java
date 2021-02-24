@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetroClientInstance {
     private static Retrofit retrofit;
-    private static final String BASE_URL = "https://raw.githubusercontent.com/Laeti08/SwipToLearn/Json/";
+    private static final String BASE_URL = "https://raw.githubusercontent.com/Laeti08/SwipToLearn/main/";
 
     public static Retrofit getRetrofitInstance() {
         if (retrofit == null) {
