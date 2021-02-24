@@ -10,7 +10,6 @@
 		"MotAnglais":"Pig",
 		"Traduction":"Cochon"
 	},
-
 	{
 		"Categorie":"Animaux",
 		"Images":"https://previews.123rf.com/images/lightfieldstudios/lightfieldstudios1811/lightfieldstudios181116755/111505216-cute-frenchie-dog-lying-on-floor-and-looking-up.jpg",
@@ -30,7 +29,6 @@
 		"MotAnglais":"Horse",
 		"Traduction":"Cheval"
 	},
-
 	{
 		"Categorie":"Animaux",
 		"Images":"https://previews.123rf.com/images/mirco1/mirco11810/mirco1181000026/118384812-close-up-portrait-of-an-aldabra-giant-tortoise.jpg",
@@ -44,6 +42,7 @@
 		"MotAnglais":"Rabbit",
 		"Traduction":"Lapin"
 	},
+
 	{
 		"Categorie":"Habitation",
 		"Images":"https://previews.123rf.com/images/dropthepress/dropthepress1905/dropthepress190500429/122762250-vertical-front-door-with-glass-panel-and-holiday-decoration-against-a-ribbed-white-wall-plants-on-co.jpg",
@@ -86,6 +85,7 @@
 		"MotAnglais":"Flat",
 		"Traduction":"Appartement"
 	},
+
 	{
 		"Categorie":"Transport",
 		"Images":"https://previews.123rf.com/images/scanrail/scanrail1101/scanrail110100045/8644087-vol-avion-de-ligne-dans-le-ciel-bleu.jpg",
@@ -127,6 +127,8 @@
 		"Images":"https://previews.123rf.com/images/belchonock/belchonock1812/belchonock181200607/112877388-pair-of-stylish-quad-roller-skates-on-color-background-space-for-text.jpg",
 		"MotAnglais":"Roller Skates",
 		"Traduction":"Patin à roulettes"
+	},
+
 	{
 		"Categorie":"Nourriture",
 		"Images":"https://previews.123rf.com/images/bystudio/bystudio1908/bystudio190800228/129878141-plastic-plastic-bottle-isolated-on-a-white-background.jpg",
@@ -174,6 +176,7 @@
 		"MotAnglais":"Potatoes",
 		"Traduction":"pomme de terre"
 	},
+
 	{
 		"Categorie":"Métiers",
 		"Images":"https://previews.123rf.com/images/dolgachov/dolgachov1701/dolgachov170100150/68454745-l-homme-nourrir-les-vaches-avec-du-foin-dans-l-%C3%A9table-%C3%A0-la-ferme-laiti%C3%A8re.jpg",
@@ -216,6 +219,7 @@
 		"MotAnglais":"Writer",
 		"Traduction":"Ecrivain"
 	},
+
 	{
 		"Categorie":"Objet",
 		"Images":"https://previews.123rf.com/images/fifg/fifg1806/fifg180600098/103138908-june-12-2018-moscow-russia-a-man-holding-a-trophy-of-the-fifa-world-cup-.jpg",
@@ -258,6 +262,7 @@
 		"MotAnglais":"Headphones",
 		"Traduction":"Ecouteurs"
 	},
+
 	{
 		"Categorie":"Imaginaire",
 		"Images":"https://www.pokepedia.fr/images/thumb/8/89/Salam%C3%A8che-RFVF.png/530px-Salam%C3%A8che-RFVF.png",
@@ -301,5 +306,3 @@
 		"Traduction":"Carapuce"
 	}
 ]
-
-

@@ -18,13 +18,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
+        app:layout_constraintBottom_toTopOf="@+id/loginEditText"
         android:contentDescription="@string/desc"/>
 
     <EditText
         android:layout_height="30dp"
         android:layout_width="210dp"
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/loginEditText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +40,7 @@
     <EditText
         android:layout_height="30dp"
         android:layout_width="210dp"
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/passwordEditText"
         app:layout_constraintVertical_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -52,37 +52,20 @@
         android:ems="10"
         android:background="#11000000"
         android:autofillHints="@string/password"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"/>
+        app:layout_constraintTop_toBottomOf="@+id/loginEditText"/>
 
-
-    <androidx.cardview.widget.CardView
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_width="300dp"
-        app:layout_constraintVertical_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
-        app:cardCornerRadius="25dp"
-        app:cardBackgroundColor="#F45C36">
-
-
-    <RelativeLayout
-        android:layout_height="match_parent"
-        android:layout_width="match_parent">
-
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/textView"
-        android:textSize="18sp"
-        android:textColor="#FFF"
+        android:backgroundTint="#F45C36"
+        android:fontFamily="@font/bangers"
         android:text="@string/login"
-        android:layout_centerInParent="true"/>
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
 
-</RelativeLayout>
-
-</androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
