@@ -15,6 +15,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Database;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
 
 import com.wenchao.cardstack.CardStack;
 
@@ -23,6 +26,8 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static com.example.swipetolearn.SwipeToLearnScoresActivity.setScoreText;
 
 
 public class SwipeToLearnActivity extends AppCompatActivity implements CardStack.CardEventListener {
@@ -105,6 +110,13 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
             Intent intent = new Intent(SwipeToLearnActivity.this, SwipeToLearnScoresActivity.class);
             startActivity(intent);
         });
+
+
+        /*Player player=new Player( 0, "login", "password", 0);
+        UserDatabase db= Room.databaseBuilder(this,UserDatabase.class, "database.db").build();
+        String score;
+        db.playerDao().insert(player);
+        */
     }
 
 
@@ -221,6 +233,7 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
             Toast.makeText(this, message,Toast.LENGTH_SHORT).show();
         }
         swipeNumber++;
+        setScoreText(numberVictory,swipeNumber);//VERSION NULL
     }
 
 
