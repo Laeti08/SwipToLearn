@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/animaux"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="Animaux"/>
+
+    <item android:id="@+id/habitation"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="Habitation"/>
+
+    <item android:id="@+id/imaginaire"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="Imaginaire"/>
+
+    <item android:id="@+id/objet"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="Objet"/>
+
+    <item android:id="@+id/nourriture"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="Nourriture"/>
+
+    <item android:id="@+id/metier"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="Métier"/>
+
+</menu>
