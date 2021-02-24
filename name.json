@@ -1,5 +1,4 @@
-{
-	"results":[
+[
 	{ "categorie": "nourriture", "name": "Strawberry"},
 	{ "categorie": "nourriture", "name": "Melon"},
 	{ "categorie": "nourriture", "name": "Pizza"},
@@ -87,8 +86,8 @@
 	{ "categorie": "Objet", "name" : "World Cup"},
 	{ "categorie": "Objet", "name" : "Knife"},
 	{ "categorie": "Objet", "name" : "Fork"},
-	]
-}
+]
+
 	
 
 	
