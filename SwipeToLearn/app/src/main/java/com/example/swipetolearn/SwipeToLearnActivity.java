@@ -57,7 +57,7 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
             @Override
             public void onResponse(Call<List<RetroBanqueImage>> call, Response<List<RetroBanqueImage>> response) {
                 Log.d("response",response.body().get(0).image);
-                card_adapter.addAll(response.body());
+                card_adapter.addAll(response.body());//Ajout du contenu du fichier JSON
 
                 textView=(TextView) findViewById(R.id.gameName);
                 textView.setText(englishwordList[0]);
@@ -70,8 +70,8 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
                 Toast.makeText(SwipeToLearnActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
             }
         });
-
-        callName.enqueue(new Callback<List<RetroName>>() {
+        //Nous n'avons pas eu le temps d'implementer les fonctions pour utiliser ce fichier JSON
+        /*callName.enqueue(new Callback<List<RetroName>>() {
             @Override
             public void onResponse(Call<List<RetroName>> callName, Response<List<RetroName>> response) {
 
@@ -85,7 +85,7 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
                 t.printStackTrace();
                 Toast.makeText(SwipeToLearnActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
 
 

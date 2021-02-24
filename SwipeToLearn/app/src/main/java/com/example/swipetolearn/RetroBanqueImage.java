@@ -3,7 +3,7 @@ package com.example.swipetolearn;
 import com.google.gson.annotations.SerializedName;
 
 public class RetroBanqueImage {
-
+        //Classe qui correspond au fichier JSON RetroBanqueImage
         @SerializedName("Categorie")
         public String categorie;
         @SerializedName("Images")

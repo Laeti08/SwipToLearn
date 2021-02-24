@@ -12,6 +12,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetroClientInstance {
+
+    //Classe qui permet l'appel a retrofit
     private static Retrofit retrofit;
     private static final String BASE_URL = "https://raw.githubusercontent.com/Laeti08/SwipToLearn/main/";
 
@@ -25,7 +27,7 @@ public class RetroClientInstance {
             retrofit = new retrofit2.Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .client(client)
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create())//Converti les Json
                     .build();
         }
         return retrofit;

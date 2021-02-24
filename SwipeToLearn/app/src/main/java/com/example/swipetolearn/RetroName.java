@@ -3,7 +3,7 @@ package com.example.swipetolearn;
 import com.google.gson.annotations.SerializedName;
 
 public class RetroName {
-
+    //Classe qui correspond au fichier JSON RetroName
     @SerializedName("categorie")
     private String categorie;
     @SerializedName("name")
