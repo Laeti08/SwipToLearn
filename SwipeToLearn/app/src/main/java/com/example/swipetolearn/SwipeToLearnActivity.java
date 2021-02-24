@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,6 +30,12 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
     private Button seeScoresButton;
     private CardStack card_stack;
     private CardAdapter card_adapter;
+    private TextView textView;
+    private int index=0;
+    private int swipeNumber=0;
+    private int numberVictory=0;
+    private String[] englishwordList={"Donkey","Pig","Dog","Koala","Horse","Turtle","Rabbit","Door","House","Kitchen","Bathroom","Bedroom","Garden","Flat","Airplane","Bicycle","Boat","Car","Subway","Train","Roller Skates","Water","Strawberry","Cherry","Pizza","Raspberry","Banana","Potatoes","Farmer","Cooker","Doctor","Teacher","Musician","Painter","Writer","World cup","Scissors","Table","Computer","Shield","Board Game","Headphones","Charmander","Magician","Dragon","Angel","Elf","Dwarf","Squirtle"};
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,6 +53,9 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
             public void onResponse(Call<List<RetroBanqueImage>> call, Response<List<RetroBanqueImage>> response) {
                 Log.d("response",response.body().get(0).image);
                 card_adapter.addAll(response.body());
+
+                textView=(TextView) findViewById(R.id.gameName);
+                textView.setText(englishwordList[0]);
             }
 
             public void onFailure(Call<List<RetroBanqueImage>> call, Throwable t) {
@@ -82,6 +92,9 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
         card_stack.setAdapter(card_adapter);
 
         card_stack.setListener(this);
+
+
+
 
 
 
@@ -128,16 +141,48 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
 
     }
 
+    public int returnIndex(String[] listString){
+        for (int i=0;i<listString.length;i++){
+            Log.d("DEBUG",listString[i]);
+            Log.d("Textview",textView.getText().toString());
+            if(listString[i].equals(textView.getText().toString())){
+                return i;
+            }
+        }
+        Log.d("DEBUG","apres la boucle");
+        return -1;
+    }
+
     @Override
     public boolean swipeEnd(int i, float v) {
         if(i==0 || i==2){
-            //gameFunction
-            Toast.makeText(this,"a gauche",Toast.LENGTH_LONG).show();
+            //REPONSE NON
+            if(index==returnIndex(englishwordList)){
+                gameResult(false);
+            }
+            else{
+                gameResult(true);
+            }
         }
         if(i==1 || i==3){
-            //gameFunction
-            Toast.makeText(this,"a droite",Toast.LENGTH_LONG).show();
+            //REPONSE OUI
+            if(index==returnIndex(englishwordList)){
+                gameResult(true);
+            }
+            else{
+                gameResult(false);
+            }
         }
+        int round= (int)(Math.random()*100);
+        if(round<60){
+            int choice = (int)(Math.random() * 48);
+            textView.setText(englishwordList[choice]);
+        }
+        else{
+            textView.setText(englishwordList[index+1]);
+        }
+
+        index=index+1;
         return (v>300)?true:false;
     }
 
@@ -164,26 +209,18 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
     }
 
 
-
-
-
-
-    public boolean gameFunction(int i){
-        //A FAIRE
-        return false;
-    }
-
     private void gameResult(boolean result){
         String message;
         if (result==true){
             message="Résultat correct, bien joué !";
             Toast.makeText(this, message,Toast.LENGTH_SHORT).show();
+            numberVictory++;
         }
         else{
             message="Resultat incorrect, dommage !";
             Toast.makeText(this, message,Toast.LENGTH_SHORT).show();
         }
-        //Affichge trueName, la correction
+        swipeNumber++;
     }
 
 
