@@ -9,11 +9,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Database;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
 
 import com.wenchao.cardstack.CardStack;
 
@@ -23,19 +27,28 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.example.swipetolearn.SwipeToLearnScoresActivity.setScoreText;
+
 
 public class SwipeToLearnActivity extends AppCompatActivity implements CardStack.CardEventListener {
 
     private Button seeScoresButton;
     private CardStack card_stack;
     private CardAdapter card_adapter;
+    private TextView textView;
+    private int index=0;
+    private int swipeNumber=0;
+    private int numberVictory=0;
+    private String[] englishwordList={"Donkey","Pig","Dog","Koala","Horse","Turtle","Rabbit","Door","House","Kitchen","Bathroom","Bedroom","Garden","Flat","Airplane","Bicycle","Boat","Car","Subway","Train","Roller Skates","Water","Strawberry","Cherry","Pizza","Raspberry","Banana","Potatoes","Farmer","Cooker","Doctor","Teacher","Musician","Painter","Writer","World cup","Scissors","Table","Computer","Shield","Board Game","Headphones","Charmander","Magician","Dragon","Angel","Elf","Dwarf","Squirtle"};
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_layout);
 
-        //Appel aux fichiers Json
+
+        //APPEL AUX FICHIERS JSON
         GetDataClient service = RetroClientInstance.getRetrofitInstance().create(GetDataClient.class);
 
         Call<List<RetroBanqueImage>> call = service.getAllImages();
@@ -43,9 +56,11 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
         call.enqueue(new Callback<List<RetroBanqueImage>>() {
             @Override
             public void onResponse(Call<List<RetroBanqueImage>> call, Response<List<RetroBanqueImage>> response) {
-
                 Log.d("response",response.body().get(0).image);
+                card_adapter.addAll(response.body());
 
+                textView=(TextView) findViewById(R.id.gameName);
+                textView.setText(englishwordList[0]);
             }
 
             public void onFailure(Call<List<RetroBanqueImage>> call, Throwable t) {
@@ -71,8 +86,11 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
                 Toast.makeText(SwipeToLearnActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
             }
         });
-        
-        initImages();
+
+
+
+        //MISE EN PLACE SWIPECARD
+        card_adapter = new CardAdapter(getApplicationContext(), 0);
         card_stack=(CardStack)findViewById(R.id.card_stack);
         card_stack.setContentResource(R.layout.card_layout);
         card_stack.setStackMargin(20);
@@ -81,6 +99,12 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
         card_stack.setListener(this);
 
 
+
+
+
+
+
+        //BOUTON VOIR LES SCORES
         seeScoresButton = (Button) findViewById(R.id.seeScoresButton);
         seeScoresButton.setOnClickListener(v -> {
             Intent intent = new Intent(SwipeToLearnActivity.this, SwipeToLearnScoresActivity.class);
@@ -88,8 +112,12 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
         });
 
 
+        /*Player player=new Player( 0, "login", "password", 0);
+        UserDatabase db= Room.databaseBuilder(this,UserDatabase.class, "database.db").build();
+        String score;
+        db.playerDao().insert(player);
+        */
     }
-
 
 
     @Override
@@ -125,42 +153,48 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
 
     }
 
-    public boolean gameFunction(int i){
-        //A FAIRE
-        return false;
-    }
-
-    private void gameResult(boolean result){
-        String message;
-        if (result==true){
-            message="Résultat correct, bien joué !";
-            Toast.makeText(this, message,Toast.LENGTH_SHORT).show();
+    public int returnIndex(String[] listString){
+        for (int i=0;i<listString.length;i++){
+            Log.d("DEBUG",listString[i]);
+            Log.d("Textview",textView.getText().toString());
+            if(listString[i].equals(textView.getText().toString())){
+                return i;
+            }
         }
-        else{
-            message="Resultat incorrect, dommage !";
-            Toast.makeText(this, message,Toast.LENGTH_SHORT).show();
-        }
-        //Affichge trueName, la correction
-    }
-
-    private void initImages() {
-        card_adapter=new CardAdapter(getApplicationContext(),0);
-        card_adapter.add(R.drawable.batman);
-        card_adapter.add(R.drawable.logo2);
-        card_adapter.add(R.drawable.superman);
+        Log.d("DEBUG","apres la boucle");
+        return -1;
     }
 
     @Override
     public boolean swipeEnd(int i, float v) {
         if(i==0 || i==2){
-            //gameFunction
-            Toast.makeText(this,"a gauche",Toast.LENGTH_LONG).show();
+            //REPONSE NON
+            if(index==returnIndex(englishwordList)){
+                gameResult(false);
+            }
+            else{
+                gameResult(true);
+            }
         }
         if(i==1 || i==3){
-            //gameFunction
-            Toast.makeText(this,"a droite",Toast.LENGTH_LONG).show();
+            //REPONSE OUI
+            if(index==returnIndex(englishwordList)){
+                gameResult(true);
+            }
+            else{
+                gameResult(false);
+            }
+        }
+        int round= (int)(Math.random()*100);
+        if(round<60){
+            int choice = (int)(Math.random() * 48);
+            textView.setText(englishwordList[choice]);
+        }
+        else{
+            textView.setText(englishwordList[index+1]);
         }
 
+        index=index+1;
         return (v>300)?true:false;
     }
 
@@ -185,5 +219,23 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
     public void topCardTapped() {
 
     }
+
+
+    private void gameResult(boolean result){
+        String message;
+        if (result==true){
+            message="Résultat correct, bien joué !";
+            Toast.makeText(this, message,Toast.LENGTH_SHORT).show();
+            numberVictory++;
+        }
+        else{
+            message="Resultat incorrect, dommage !";
+            Toast.makeText(this, message,Toast.LENGTH_SHORT).show();
+        }
+        swipeNumber++;
+        setScoreText(numberVictory,swipeNumber);//VERSION NULL
+    }
+
+
 
 }

@@ -16,5 +16,6 @@
     <string name="swipe_to_learn">Swipe To Learn</string>
     <string name="gameimage">Image du jeu</string>
     <string name="seeScores">Voir les scores</string>
+    <string name="score">score</string>
 
 </resources>
