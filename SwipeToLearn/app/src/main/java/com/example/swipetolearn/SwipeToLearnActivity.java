@@ -39,6 +39,7 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
     private int index=0; //index de l'image affichée (elles sont dans l'ordre)
     private int swipeNumber=0; //Nombre de swipe joué
     private int numberVictory=0; //Nombre de victoire
+    private TextView zoneText; //zone de texte où on stocke les joueurs
     private String[] englishwordList={"Donkey","Pig","Dog","Koala","Horse","Turtle","Rabbit","Door","House","Kitchen","Bathroom","Bedroom","Garden","Flat","Airplane","Bicycle","Boat","Car","Subway","Train","Roller Skates","Water","Strawberry","Cherry","Pizza","Raspberry","Banana","Potatoes","Farmer","Cooker","Doctor","Teacher","Musician","Painter","Writer","World cup","Scissors","Table","Computer","Shield","Board Game","Headphones","Charmander","Magician","Dragon","Angel","Elf","Dwarf","Squirtle"};
     //Creation de la liste manuelle des mots
 
@@ -107,11 +108,23 @@ public class SwipeToLearnActivity extends AppCompatActivity implements CardStack
             startActivity(intent);
         });
 
-
+// ici on esssaye d'ajouter un joueur à la BDD, l'ajout semble bien marché mais on n'arrive pas à visualiser ce qu'on ajoute
         /*Player player=new Player( 0, "login", "password", 0);
         UserDatabase db= Room.databaseBuilder(this,UserDatabase.class, "database.db").build();
-        String score;
         db.playerDao().insert(player);
+        List<Player> playerList = db.playerDao().getAll();
+            String text = "";
+            for (Player player : playerList) {
+
+                Log.i("SwipeToLearn", player.toString());
+                text += player.toString() + "\n";
+            }
+            String finalText = text;
+            runOnUiThread(() -> {
+
+            zoneText.setText(finalText);
+
+            });
         */
     }
 

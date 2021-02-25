@@ -17,7 +17,7 @@ public class Player {
     @ColumnInfo
     private int score;
 
-
+// classe du joueur avec ses différents attributs
 
     public Player(int idPlayer, String login, String password, int score) {
         this.idPlayer = idPlayer;

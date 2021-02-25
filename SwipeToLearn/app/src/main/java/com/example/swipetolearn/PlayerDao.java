@@ -9,7 +9,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import java.util.List;
-
+//classe qui contient les différentes requêtes qui vont être manipulées dans la BDD
 @Dao
 public interface PlayerDao {
     //read
